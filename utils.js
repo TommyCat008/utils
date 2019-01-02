@@ -201,7 +201,7 @@ Utils.prototype.createGuid = function () {
  * @param {number} starttime 13位的时间戳
  * @param {number} endtime 13位的时间戳
  */
-Utils.prototype.timeDiff2String = function () {
+Utils.prototype.timeDiff2String = function (starttime, endtime) {
     let timeDiff = endtime - starttime;
     if (timeDiff <= 0) return '';
     let day = Math.floor(timeDiff / 1000 / 60 / 60 / 24); //天
@@ -219,7 +219,7 @@ Utils.prototype.timeDiff2String = function () {
  * @param {number} timeline 13位的时间戳
  */
 Utils.prototype.formatTimeline = function (timeline) {
-    let date = new Date(time);
+    let date = new Date(timeline);
     let year = date.getFullYear();
     let month = date.getMonth() + 1;
     month = month < 10 ? '0' + month : month;
